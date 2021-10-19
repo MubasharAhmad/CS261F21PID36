@@ -1,0 +1,9 @@
+Spanish
+English
+Russian
+Japanise
+Turkish
+Korean
+French
+German
+Urdu

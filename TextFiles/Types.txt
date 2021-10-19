@@ -1,0 +1,20 @@
+Literary
+Technical
+Science
+Mathematics
+Medicine
+History
+Drama
+Novel
+Horror
+Short Story
+Mystery
+Crime
+Psychology
+Classic
+Poetry
+Suspense
+Realistic Fiction
+Meta Fiction
+Thriller
+Comic
