@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>SortWindow</class>
+ <widget class="QMainWindow" name="SortWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>955</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Sort Window</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(44, 62, 80);
+QMainWindow{
+font: 12pt &quot;Segoe UI&quot;;
+}</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QPushButton" name="GoBackBtn_SortWindow">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>20</y>
+      <width>131</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Segoe UI</family>
+      <pointsize>16</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+	background-color: rgb(127, 140, 141);
+	color: rgb(255, 255, 255);
+	border-style: none
+}
+
+QPushButton::hover{
+	color: rgb(44, 62, 80);
+	background-color: rgb(236, 240, 241);
+	border-style: none
+}</string>
+    </property>
+    <property name="text">
+     <string>Go Back</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="SearchBtn_SortWindow">
+    <property name="geometry">
+     <rect>
+      <x>800</x>
+      <y>20</y>
+      <width>141</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Segoe UI</family>
+      <pointsize>16</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+	background-color: rgb(127, 140, 141);
+	color: rgb(255, 255, 255);
+	border-style: none
+}
+
+QPushButton::hover{
+	color: rgb(44, 62, 80);
+	background-color: rgb(236, 240, 241);
+	border-style: none
+}</string>
+    </property>
+    <property name="text">
+     <string>Search Data</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>10</y>
+      <width>631</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Segoe UI</family>
+      <pointsize>30</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(189, 195, 199);</string>
+    </property>
+    <property name="text">
+     <string>Sort Data</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QTableWidget" name="tableWidget">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>140</y>
+      <width>921</width>
+      <height>421</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">
+QHeaderView::section
+{
+spacing: 10px;
+background-color: rgb(127, 140, 141);
+color: white;
+border: 1px solid white;
+margin: 1px;
+text-align: leftr;
+gridline-color: rgb(255, 255, 255);
+	selection-color: rgb(189, 195, 199);
+font: 10pt &quot;Segoe UI&quot;;
+}</string>
+    </property>
+    <column>
+     <property name="text">
+      <string>Name</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>ID</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Price</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Pages</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Author</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Language</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Type</string>
+     </property>
+    </column>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>100</y>
+      <width>201</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Segoe UI</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(189, 195, 199);</string>
+    </property>
+    <property name="text">
+     <string>Select Sorting Algorithm:</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="SortingAlgoCB">
+    <property name="geometry">
+     <rect>
+      <x>220</x>
+      <y>100</y>
+      <width>121</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color:rgb(236, 240, 241);
+background-color: rgb(52, 73, 94);
+font: 12pt &quot;Segoe UI&quot;;
+ border: 1px solid gray;
+
+QComboBox::item {
+	border-top: 4px;
+	border-left: 4px;
+	border-bottom: 4px;
+	border-right: 4px;
+}</string>
+    </property>
+    <item>
+     <property name="text">
+      <string>Quick</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Selection</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Insertion</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Bubble</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Merge</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Counting</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Bucket</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Radix</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Heap</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Cycle</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Bitonic</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Pancake</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Patience</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Smooth</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QCheckBox" name="Multi_level_sort_checkBox">
+    <property name="geometry">
+     <rect>
+      <x>470</x>
+      <y>100</y>
+      <width>181</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Segoe UI</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(236, 240, 241);</string>
+    </property>
+    <property name="text">
+     <string>Multi-level Sorting</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="Decre_incre_checkBox">
+    <property name="geometry">
+     <rect>
+      <x>350</x>
+      <y>100</y>
+      <width>101</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Segoe UI</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(236, 240, 241);</string>
+    </property>
+    <property name="text">
+     <string>Decreasing</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>670</x>
+      <y>100</y>
+      <width>161</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Segoe UI</family>
+      <pointsize>14</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(236, 240, 241);</string>
+    </property>
+    <property name="text">
+     <string>Time taken to sort:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="show_time_label">
+    <property name="geometry">
+     <rect>
+      <x>850</x>
+      <y>100</y>
+      <width>51</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Segoe UI</family>
+      <pointsize>14</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(236, 240, 241);</string>
+    </property>
+    <property name="text">
+     <string>0 ms</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
