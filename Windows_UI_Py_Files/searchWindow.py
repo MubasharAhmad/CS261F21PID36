@@ -134,8 +134,7 @@ class Ui_SearchWindow(object):
         font.setFamily("Segoe UI")
         font.setPointSize(11)
         self.search_input.setFont(font)
-        self.search_input.setStyleSheet("color: lightgray;\n"
-"placeholder:\"Mubashar\";")
+        self.search_input.setStyleSheet("color: lightgray;")
         self.search_input.setObjectName("search_input")
         self.search_input_complex = QtWidgets.QLineEdit(self.centralwidget)
         self.search_input_complex.setGeometry(QtCore.QRect(440, 100, 181, 31))

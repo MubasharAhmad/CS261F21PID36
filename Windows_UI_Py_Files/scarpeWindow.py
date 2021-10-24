@@ -82,6 +82,9 @@ class Ui_ScrapWindow(object):
 "    margin: 1px;\n"
 "    text-align: center;\n"
 "    font: 10pt \"Segoe UI\";\n"
+"}\n"
+"QTableWidget::item {\n"
+    "color: white;\n"
 "}")
         self.ScrapeWindowTable.setObjectName("ScrapeWindowTable")
         self.ScrapeWindowTable.setColumnCount(7)
