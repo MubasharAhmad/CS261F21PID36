@@ -1,5 +1,5 @@
 # Implementation of Heap Sort for both Numbers and Strigs
-from sort import Sort
+from sorting.sort import Sort
 
 
 class HeapSort(Sort):
@@ -13,18 +13,23 @@ class HeapSort(Sort):
         for j in range(self.length - 1, 0, -1):
             self.arr[j], self.arr[0] = self.arr[0], self.arr[j]
             self.makeHeaf(j, 0)
+        if reverse:
+            return self.arr[::-1]
         return self.arr
 
     def makeHeaf(self, n, i):
         largest = i
         left = 2 * i + 1
         right = 2 * i + 2
+        try:
+            if type(self.arr[largest][Sort.Key]) == type(self.arr[left][Sort.Key]):
+                if left < n and self.arr[largest][Sort.Key] < self.arr[left][Sort.Key]:
+                    largest = left
 
-        if left < n and self.arr[largest] < self.arr[left]:
-            largest = left
-
-        if right < n and self.arr[largest] < self.arr[right]:
-            largest = right
+                if right < n and self.arr[largest][Sort.Key] < self.arr[right][Sort.Key]:
+                    largest = right
+        except:
+            pass
 
         if largest != i:
             self.arr[i], self.arr[largest] = self.arr[largest], self.arr[i]

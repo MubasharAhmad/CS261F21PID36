@@ -1,4 +1,4 @@
-from sort import Sort
+from sorting.sort import Sort
 
 # Implementation of Cycle Sort for both Numbers and Strigs
 
@@ -13,7 +13,7 @@ class CycleSort(Sort):
             counter = c
 
             for i in range(c + 1, self.length):
-                if self.arr[i] < item:
+                if self.arr[i][Sort.Key] < item[Sort.Key]:
                     counter += 1
 
             item, self.arr[counter] = self.arr[counter], item
@@ -21,8 +21,9 @@ class CycleSort(Sort):
             while(counter != c):
                 counter = c
                 for i in range(c + 1, self.length):
-                    if self.arr[i] < item:
+                    if self.arr[i][Sort.Key] < item[Sort.Key]:
                         counter += 1
+                print(counter)
                 item, self.arr[counter] = self.arr[counter], item
         if reverse:
             return self.arr[::-1]

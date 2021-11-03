@@ -75,6 +75,9 @@ class Ui_SearchWindow(object):
 "gridline-color: rgb(255, 255, 255);\n"
 "    selection-color: rgb(189, 195, 199);\n"
 "font: 10pt \"Segoe UI\";\n"
+"}\n"
+"QTableWidget::item {\n"
+    "color: white;\n"
 "}")
         self.tableWidget.setObjectName("tableWidget")
         self.tableWidget.setColumnCount(7)
@@ -102,14 +105,14 @@ class Ui_SearchWindow(object):
         self.label_2.setStyleSheet("color: rgb(189, 195, 199);")
         self.label_2.setAlignment(QtCore.Qt.AlignCenter)
         self.label_2.setObjectName("label_2")
-        self.Decre_incre_checkBox = QtWidgets.QCheckBox(self.centralwidget)
-        self.Decre_incre_checkBox.setGeometry(QtCore.QRect(360, 100, 61, 31))
+        self.filters_checkBox = QtWidgets.QCheckBox(self.centralwidget)
+        self.filters_checkBox.setGeometry(QtCore.QRect(360, 100, 61, 31))
         font = QtGui.QFont()
         font.setFamily("Segoe UI")
         font.setPointSize(12)
-        self.Decre_incre_checkBox.setFont(font)
-        self.Decre_incre_checkBox.setStyleSheet("color: rgb(236, 240, 241);")
-        self.Decre_incre_checkBox.setObjectName("Decre_incre_checkBox")
+        self.filters_checkBox.setFont(font)
+        self.filters_checkBox.setStyleSheet("color: rgb(236, 240, 241);")
+        self.filters_checkBox.setObjectName("filters_checkBox")
         self.SearchAlgoCB = QtWidgets.QComboBox(self.centralwidget)
         self.SearchAlgoCB.setGeometry(QtCore.QRect(100, 100, 121, 31))
         self.SearchAlgoCB.setStyleSheet("color:rgb(236, 240, 241);\n"
@@ -192,7 +195,7 @@ class Ui_SearchWindow(object):
         item = self.tableWidget.horizontalHeaderItem(6)
         item.setText(_translate("SearchWindow", "Type"))
         self.label_2.setText(_translate("SearchWindow", "Algorithm:"))
-        self.Decre_incre_checkBox.setText(_translate("SearchWindow", "filters"))
+        self.filters_checkBox.setText(_translate("SearchWindow", "filters"))
         self.SearchAlgoCB.setItemText(0, _translate("SearchWindow", "linear"))
         self.SearchAlgoCB.setItemText(1, _translate("SearchWindow", "binary"))
         self.SearchAlgoCB.setItemText(2, _translate("SearchWindow", "jump"))

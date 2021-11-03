@@ -80,6 +80,9 @@ class Ui_SortWindow(object):
 "gridline-color: rgb(255, 255, 255);\n"
 "    selection-color: rgb(189, 195, 199);\n"
 "font: 10pt \"Segoe UI\";\n"
+"}\n"
+"QTableWidget::item {\n"
+    "color: white;\n"
 "}")
         self.tableWidget.setObjectName("tableWidget")
         self.tableWidget.setColumnCount(7)

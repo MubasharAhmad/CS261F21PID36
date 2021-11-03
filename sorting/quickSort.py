@@ -1,13 +1,19 @@
-from sort import Sort
+from sorting.sort import Sort
+# import sys
+# sys.setrecursionlimit(1000)
+import random
 
 class QuickSort(Sort):
+    counter = 0
     def __init__(self, arr):
         self.arr = arr
-    def sortInt(self, reverse=False):
+    def sort(self, reverse=False):
         return self.quickSort(self.arr,0,len(self.arr)-1,reverse)
     def quickSort(self,arr, low, high,reverse):
         if (low < high):
             pi = self.partition(self.arr, low, high)
+            self.counter += 1
+            # print(self.counter)
             self.quickSort(self.arr, low, pi-1,reverse)
             self.quickSort(self.arr, pi+1, high,reverse)
         if(reverse == True):
@@ -15,12 +21,16 @@ class QuickSort(Sort):
         else:
             return self.arr
     def partition(self,arr, low, high):
-        pivot = self.arr[high]
+        n = random.randint(low, high)
+        pivot = self.arr[n]
         i = (low - 1)
         for j in range(low,high):
-            if(self.arr[j] < pivot):
-                i += 1
-                self.arr[i],self.arr[j] = self.arr[j],self.arr[i]
+            try:
+                if(self.arr[j][Sort.Key] < pivot[Sort.Key]):
+                    i += 1
+                    self.arr[i],self.arr[j] = self.arr[j],self.arr[i]
+            except:
+                pass
         self.arr[high],self.arr[i+1] = self.arr[i+1],self.arr[high]
         return (i+1)
     def sortString(self, reverse=False):

@@ -26,9 +26,10 @@ class ScrapOnDiffThread(Thread):
 
 
 class LoadCSV(Thread):
+    path = ""
     data = []
     def run(self):
-        self.df = pd.read_csv("CSV_Files/books.csv")
+        self.df = pd.read_csv(self.path)
         self.data = self.df.to_dict('records')
 
 
@@ -80,6 +81,7 @@ class ScrapWindow(QMainWindow):
         print("load btn clicked")
         if self.LoadBtn_Clicked == False:
             csv = LoadCSV()
+            csv.path = r"CSV_Files/books.csv"
             self.LoadBtn_Clicked = True
             csv.start()
             csv.join()

@@ -1,17 +1,31 @@
-from sort import Sort
+from sorting.sort import Sort
 
-class radixSort(Sort):
+class RadixSort(Sort):
     def __init__(self, arr,pos):
         self.arr = arr
         self.pos = pos
-    def sortInt(self, reverse=False):
+    def sort(self, reverse=False):
         return self.RadixSort(self.arr,reverse)
     def RadixSort(self,arr,reverse):
-        Max = max(arr)
+        if type(self.arr[0][Sort.Key]) == str:
+            Max = "\u0000"
+        elif type(self.arr[0][Sort.Key]) == int:
+            Max = 0
+        for i in range(0,len(arr)):
+            try:
+                if(self.arr[i][Sort.Key] > Max):
+                    Max = self.arr[i][Sort.Key]
+            except:
+                pass
         pos = 1
+        count = 0
         while((Max // pos) > 0):
             self.countSort(self.arr, pos)
             pos *= 10
+            print(count)
+            count += 1
+            # if(count == 100):
+            #     break
         if(reverse == True):
             return self.arr[:: -1]
         else:
@@ -21,7 +35,7 @@ class radixSort(Sort):
         output = [0] * (len(self.arr))
         count = [0] * (10)
         for i in range(0, len(arr)):
-            index = (self.arr[i] // pos)
+            index = (self.arr[i][Sort.Key] // pos)
             count[index % 10] += 1
         #print(count)
         #print("-----------")
@@ -31,7 +45,7 @@ class radixSort(Sort):
         #print("-----------")
         i = len(self.arr) - 1
         while i >= 0:
-            value = (self.arr[i] // pos)
+            value = (self.arr[i][Sort.Key] // pos)
             output[count[value % 10] - 1] = self.arr[i]
             count[value % 10] -= 1
             i -= 1
@@ -40,5 +54,5 @@ class radixSort(Sort):
 if __name__ == "__main__":
     array = [110, 45, 65, 50, 90, 602, 24, 2, 66]
     pos = 1
-    output = radixSort(array,pos)
-    print(output.sortInt(False))
+    output = RadixSort(array,pos)
+    print(output.sort(False))

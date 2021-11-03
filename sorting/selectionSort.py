@@ -1,4 +1,4 @@
-from sort import Sort
+from sorting.sort import Sort
 
 
 # Implementation of Selection Sort for both Numbers and Strigs
@@ -10,11 +10,13 @@ class SelectionSort(Sort):
     def sort(self, reverse=False):
         for i in range(self.length):
             for j in range(i + 1, self.length):
-                if (self.arr[i] > self.arr[j] and reverse == False):
+                if (self.arr[i][Sort.Key] > self.arr[j][Sort.Key] and reverse == False):
                     self.arr[i], self.arr[j] = self.arr[j], self.arr[i]
-
-                elif (self.arr[i] < self.arr[j] and reverse == True):
+                elif (self.arr[i][Sort.Key] < self.arr[j][Sort.Key] and reverse == True):
                     self.arr[i], self.arr[j] = self.arr[j], self.arr[i]
+            if i > 1500:
+                break
+            print(i)
 
         return self.arr
 

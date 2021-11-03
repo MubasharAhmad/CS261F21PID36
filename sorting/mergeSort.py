@@ -1,5 +1,5 @@
 # Implementation of Merge Sort for both Numbers and Strigs
-from sort import Sort
+from sorting.sort import Sort
 
 
 class MergeSort(Sort):
@@ -20,41 +20,42 @@ class MergeSort(Sort):
             L.append(self.arr[i])
         for i in range(mid + 1, right + 1):
             R.append(self.arr[i])
+        key = Sort.Key
+        if reverse == False and type(self.arr[0][Sort.Key]) == int:
+            L.append({Sort.Key: 100000000000000000})
+            R.append({Sort.Key: 100000000000000000})
+        elif reverse == True and type(self.arr[0][Sort.Key]) == int:
+            L.append({Sort.Key: -100000000000000000})
+            R.append({Sort.Key: -100000000000000000})
 
-        if reverse == False and type(self.arr[0]) == int:
-            L.append(100000000000000000)
-            R.append(100000000000000000)
-        elif reverse == True and type(self.arr[0]) == int:
-            L.append(-100000000000000000)
-            R.append(-100000000000000000)
-
-        elif reverse == False and type(self.arr[0]) == str:
-            L.append("z")
-            R.append("z")
-        elif reverse == True and type(self.arr[0]) == str:
-            L.append("A")
-            R.append("A")
+        elif reverse == False and type(self.arr[0][Sort.Key]) == str:
+            L.append({Sort.Key: "\uFFFF"})
+            R.append({Sort.Key: "\uFFFF"})
+        elif reverse == True and type(self.arr[0][Sort.Key]) == str:
+            L.append({Sort.Key: "\u0000"})
+            R.append({Sort.Key: "\u0000"})
 
         i = 0
         j = 0
 
         for k in range(left, right+1):
             # for ascending order
-            if reverse == False:
-                if L[i] <= R[j]:
-                    self.arr[k] = L[i]
-                    i += 1
+            if type(L[i][Sort.Key]) == type(R[j][Sort.Key]):
+                if reverse == False:
+                    if L[i][Sort.Key] <= R[j][Sort.Key]:
+                        self.arr[k] = L[i]
+                        i += 1
+                    else:
+                        self.arr[k] = R[j]
+                        j += 1
+                # for descending order
                 else:
-                    self.arr[k] = R[j]
-                    j += 1
-            # for descending order
-            else:
-                if L[i] >= R[j]:
-                    self.arr[k] = L[i]
-                    i += 1
-                else:
-                    self.arr[k] = R[j]
-                    j += 1
+                    if L[i][Sort.Key] >= R[j][Sort.Key]:
+                        self.arr[k] = L[i]
+                        i += 1
+                    else:
+                        self.arr[k] = R[j]
+                        j += 1
 
     # merge sort
     def mergeSort(self, left, right, reverse):

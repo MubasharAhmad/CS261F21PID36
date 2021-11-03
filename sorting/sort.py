@@ -2,6 +2,7 @@ from abc import ABC, abstractmethod
 
 
 class Sort:
+    Key = ""
     def __init__(self, arr) -> None:
         self.arr = arr
         self.length = len(arr)

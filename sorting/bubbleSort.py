@@ -1,5 +1,5 @@
 # Implementation of Bubble Sort for both Numbers and Strigs
-from sort import Sort
+from sorting.sort import Sort
 
 
 class BubbleSort(Sort):
@@ -11,15 +11,18 @@ class BubbleSort(Sort):
             swapped = False
             for i in range(self.length - 1):
                 # for ascending order sort
-                if (self.arr[i] > self.arr[i + 1] and reverse == False):
+                if (self.arr[i][Sort.Key] > self.arr[i + 1][Sort.Key] and reverse == False):
                     self.arr[i], self.arr[i + 1] = self.arr[i + 1], self.arr[i]
                     swapped = True
 
                 # for descending order sort
-                elif (self.arr[i] < self.arr[i + 1] and reverse == True):
+                elif (self.arr[i][Sort.Key] < self.arr[i + 1][Sort.Key] and reverse == True):
                     self.arr[i], self.arr[i + 1] = self.arr[i + 1], self.arr[i]
                     swapped = True
             if swapped == False:
+                break
+            print(j)
+            if j > 1500:
                 break
 
         return self.arr
