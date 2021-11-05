@@ -13,12 +13,10 @@ class JumpSearch(Search):
         while(high < self.length and self.arr[high][Search.Key] <= value):
             # low = high
             high += 3
-        high = min(self.length,high)
-        for data in self.arr:
-            if (str(value) == str(data[Search.Key])):
-                result.append(data)
-                # break
-        # print(result)
+        h = min(self.length,high)
+        for i in range(high - 3, h):
+            if (str(value) == str(self.arr[i][Search.Key])):
+                result.append(self.arr[i])
         df = pd.DataFrame(result)
         df.to_csv('CSV_Files/output.csv', index=False,
                   encoding='utf-8', header=True)
