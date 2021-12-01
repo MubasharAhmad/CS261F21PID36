@@ -18,7 +18,7 @@ class SortWindow(QMainWindow):
         self.ui.setupUi(self)
         th = Thread(target= self.load)
         th.start()
-        self.f = True
+        # self.f = True
         self.header = ["Name","Id","Price","Pages","Author","Language","Type"]
         f = open(r"TextFiles\multiSortingData.txt", "w")
         f.writelines([])
@@ -126,10 +126,11 @@ class SortWindow(QMainWindow):
 
                 t.start()
                 result = quick.sort(reverse)
-                self.ui.show_time_label.setText(t.end())
-                self.ui.show_time_label.adjustSize()
-
-                self.showDataToTable(result)
+                
+                if result != []:
+                    self.ui.show_time_label.setText(t.end())
+                    self.ui.show_time_label.adjustSize()
+                    self.showDataToTable(result)
             # radix sort
             elif cbText == "Radix":
                 from sorting.radixSort import RadixSort

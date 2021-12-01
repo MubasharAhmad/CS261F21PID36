@@ -32,7 +32,7 @@ class SearchWindow(QMainWindow):
     def go_btn_clicked(self):
         text = self.ui.search_input_complex.text()
         if text == "":
-            self.showMsg("Field should not be empty or \ncheck what you have enterd?", QtWidgets.QMessageBox.Warning)
+            self.showMsg("Field should not be empty or \ncheck what you have entered?", QtWidgets.QMessageBox.Warning)
         else:
             from searching.compositeFilter import CompositeFilter
             fil = CompositeFilter(self.tableData)

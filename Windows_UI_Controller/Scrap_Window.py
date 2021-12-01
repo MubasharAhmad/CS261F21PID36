@@ -68,6 +68,8 @@ class ScrapWindow(QMainWindow):
         # self.ui.label_2.setText()
     
     def startBtn_clicked(self):
+        self.scrapping.running = True
+        self.LoadBtn_Clicked = False
         t1 = ScrapOnDiffThread()
         t1.set(self.scrapping)
         t1.start()
@@ -87,6 +89,7 @@ class ScrapWindow(QMainWindow):
             csv.join()
             self.tableData = csv.data
             th = Thread(target=self.tableThread)
+            # th = Thread(target=lambda: self.showDataToTable())
             th.start()
             th.join()
         else:

@@ -67,7 +67,7 @@ class Ui_ScrapWindow(object):
         self.label_2.setGeometry(QtCore.QRect(510, 50, 441, 31))
         font = QtGui.QFont()
         font.setFamily("Segoe UI")
-        font.setPointSize(12)
+        font.setPointSize(8)
         self.label_2.setFont(font)
         self.label_2.setStyleSheet("color: rgb(189, 195, 199);")
         self.label_2.setObjectName("label_2")

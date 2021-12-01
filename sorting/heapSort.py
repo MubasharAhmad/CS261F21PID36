@@ -8,16 +8,16 @@ class HeapSort(Sort):
 
     def sort(self, reverse=False):
         for i in range((self.length // 2) - 1, -1, -1):
-            self.makeHeaf(self.length, i)
+            self.makeHeap(self.length, i)
 
         for j in range(self.length - 1, 0, -1):
             self.arr[j], self.arr[0] = self.arr[0], self.arr[j]
-            self.makeHeaf(j, 0)
+            self.makeHeap(j, 0)
         if reverse:
             return self.arr[::-1]
         return self.arr
 
-    def makeHeaf(self, n, i):
+    def makeHeap(self, n, i):
         largest = i
         left = 2 * i + 1
         right = 2 * i + 2
@@ -33,7 +33,7 @@ class HeapSort(Sort):
 
         if largest != i:
             self.arr[i], self.arr[largest] = self.arr[largest], self.arr[i]
-            self.makeHeaf(n, largest)
+            self.makeHeap(n, largest)
 
 
 if __name__ == "__main__":

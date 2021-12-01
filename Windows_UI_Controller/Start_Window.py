@@ -13,7 +13,7 @@ class StartWindow(QMainWindow):
         QMainWindow.__init__(self)
         self.ui = Ui_StartWindow()
         self.ui.setupUi(self)
-        self.ui.startBtn.clicked.connect(self.startBtn_clicked)    
+        self.ui.startBtn.clicked.connect(self.startBtn_clicked)
 
     # when startBtn will be clicked this method will be called
     def startBtn_clicked(self):

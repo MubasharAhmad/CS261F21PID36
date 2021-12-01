@@ -22,8 +22,8 @@ class BubbleSort(Sort):
             if swapped == False:
                 break
             print(j)
-            if j > 1500:
-                break
+            # if j > 1500:
+            #     break
 
         return self.arr
 
